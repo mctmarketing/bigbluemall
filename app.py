@@ -15,27 +15,25 @@ def index():
 
 def bot():
     # ข้อความที่ต้องการส่งกลับ
-    #---replyStack = list()
+    replyStack = list()
    
     # ข้อความที่ได้รับมา
     msg_in_json = request.get_json()
-    #---msg_in_string = json.dumps(msg_in_json)
+    msg_in_string = json.dumps(msg_in_json)
     msg_in_json = json.dumps(msg_in_json)
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
-    #---
-    replyToken = msg_in_json["events"][0]['replyToken']
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
-    #---replyStack.append(msg_in_string)
-    #---reply(replyToken, replyStack[:5])
-    reply(replyToken, 'งง')
+    replyStack.append(msg_in_string)
+    reply(replyToken, replyStack[:5])
+
     
     return 'OK',200
  
-'''def reply(replyToken, textList):
+def reply(replyToken, textList):
     # Method สำหรับตอบกลับข้อความประเภท text กลับครับ เขียนแบบนี้เลยก็ได้ครับ
     LINE_API = 'https://api.line.me/v2/bot/message/reply'
     headers = {
@@ -43,7 +41,7 @@ def bot():
         'Authorization': LINE_API_KEY
     }
     msgs = []
-    msgs.append('สวัสดีจ้า')
+    #msgs.append('สวัสดีจ้า')
     for text in textList:
         msgs.append({
             "type":"text",
@@ -55,21 +53,7 @@ def bot():
     })
     requests.post(LINE_API, headers=headers, data=data)
     return
-'''
 
-def sendText(user, text):
-  LINE_API = 'https://api.line.me/v2/bot/message/reply'
-    headers = {
-        'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization': LINE_API_KEY
-    }
-  data = json.dumps({
-  "replyToken":user,
-  "messages":[{"type":"text","text":text}]})
-  #print("ข้อมูล：",data)
-  r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
-  #print(r.text)
-  
   
 if __name__ == '__main__':
     app.run()
