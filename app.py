@@ -48,7 +48,7 @@ def reply(replyToken, textList):
         })'''
     data = json.dumps({
         "replyToken":replyToken,
-        "messages":[{"type":"text","text":textList}]})
+        "messages":[{"type":"text","text":textList}]
     })
     requests.post(LINE_API, headers=headers, data=data)
     return
