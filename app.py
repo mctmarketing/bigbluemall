@@ -41,7 +41,7 @@ def reply(replyToken, textList):
         'Authorization': LINE_API_KEY
     }
     msgs = []
-    msgs.append('นี่คือรูปแบบข้อความที่รับส่ง')
+    msgs.append('สวัสดีจ้า')
     #for text in textList:
     '''msgs.append({
         "type":"text",
