@@ -28,10 +28,10 @@ def bot():
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     sendtext = 'งง'
     #Trainning Bot
-    '''if mytext == 'ดี':
-       sendtext = 'ดีจ้า'
+    if mytext == 'ดี':
+        sendtext = 'ดีจ้า'
      
-    if mytext == 'ดีค่ะ':
+    '''if mytext == 'ดีค่ะ':
        sendtext = 'สวัสดีค่ะ'
      
     if mytext == 'ดีครับ':
