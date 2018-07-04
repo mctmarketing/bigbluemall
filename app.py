@@ -52,19 +52,14 @@ def reply(replyToken, textList):
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': LINE_API_KEY
     }
-    '''msgs = []
-    for text in textList:
-        msgs.append({
-            "type":"text",
-            "text":text
-        })'''
+    
     '''data = json.dumps({
         "replyToken":replyToken,
         "messages":[{"type":"text","text":textList}]
     })'''
     data = json.dumps({
         "replyToken":replyToken,
-        "messages":[{"type": "sticker","packageId": "1","stickerId": "1"}]
+        "messages":{"type": "sticker","packageId": "1","stickerId": "1"}
     })
 
     requests.post(LINE_API, headers=headers, data=data)
