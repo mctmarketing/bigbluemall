@@ -25,11 +25,11 @@ def bot():
     replyToken = msg_in_json["events"][0]['replyToken']
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
-    replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
+    #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     replyStack.append(msg_in_string)
-    reply(replyToken, replyStack[:5])
+    reply(replyToken, 'ABC')
     
     return 'OK',200
  
@@ -40,15 +40,15 @@ def reply(replyToken, textList):
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': LINE_API_KEY
     }
-    msgs = []
+    '''msgs = []
     for text in textList:
         msgs.append({
             "type":"text",
             "text":text
-        })
+        })'''
     data = json.dumps({
         "replyToken":replyToken,
-        "messages":msgs
+        "messages":[{"type":"text","text":textList}]})
     })
     requests.post(LINE_API, headers=headers, data=data)
     return
