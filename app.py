@@ -28,7 +28,7 @@ def bot():
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     sendtext = 'งง'
     #Trainning Bot
-    if mytext == 'ดี':
+    '''if mytext == 'ดี':
        sendtext = 'ดีจ้า'
      
     if mytext == 'ดีค่ะ':
@@ -39,7 +39,7 @@ def bot():
       
      if mytext == 'hello':
         sendtext = 'Hi!..'
-      
+      '''
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     replyStack.append(msg_in_string)
     reply(replyToken, sendtext)
