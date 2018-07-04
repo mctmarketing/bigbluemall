@@ -26,10 +26,23 @@ def bot():
     mytext = msg_in_json["events"][0]['message']['text']
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
-    
+    sendtext = ''
+    #Trainning Bot
+    if mytext == 'ดี'
+       sendtext = 'ดีจ้า'
+     
+    if mytext == 'ดีค่ะ'
+       sendtext = 'สวัสดีค่ะ'
+     
+    if mytext == 'ดีครับ'
+        sendtext = 'สวัสดีครับ'
+      
+     if mytext == 'hello'
+        sendtext = 'Hi!..'
+      
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     replyStack.append(msg_in_string)
-    reply(replyToken, mytext)
+    reply(replyToken, sendtext)
     
     return 'OK',200
  
