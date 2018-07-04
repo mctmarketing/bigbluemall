@@ -58,12 +58,32 @@ def reply(replyToken, textList):
             "type":"text",
             "text":text
         })'''
-    data = json.dumps({
+    '''data = json.dumps({
         "replyToken":replyToken,
         "messages":[{"type":"text","text":textList}]
+    })'''
+    data = json.dumps({
+        "replyToken":replyToken,
+        "messages":[{"type": "sticker","packageId": "1","stickerId": "1"}]
     })
+
     requests.post(LINE_API, headers=headers, data=data)
     return
+   
+   '''def sendSticker(replyToken, stickerlist):
+    # Method สำหรับตอบกลับข้อความประเภท text กลับครับ เขียนแบบนี้เลยก็ได้ครับ
+    LINE_API = 'https://api.line.me/v2/bot/message/reply'
+    headers = {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'Authorization': LINE_API_KEY
+    }
+    
+    data = json.dumps({
+        "replyToken":replyToken,
+        "messages":stickerlist
+    })
+    requests.post(LINE_API, headers=headers, data=data)
+    return'''
 
 if __name__ == '__main__':
     app.run()
