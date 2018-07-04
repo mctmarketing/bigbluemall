@@ -36,7 +36,7 @@ def bot():
         sendtext = 'สวัสดีครับ'
     elif mytext == 'hello':
         sendtext = 'Hi!..'
-    else
+    else:
         sendtext = 'งง'
      
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
