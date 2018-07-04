@@ -28,16 +28,16 @@ def bot():
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     sendtext = ''
     #Trainning Bot
-    if mytext == 'ดี'
+    if mytext == 'ดี':
        sendtext = 'ดีจ้า'
      
-    if mytext == 'ดีค่ะ'
+    if mytext == 'ดีค่ะ':
        sendtext = 'สวัสดีค่ะ'
      
-    if mytext == 'ดีครับ'
+    if mytext == 'ดีครับ':
         sendtext = 'สวัสดีครับ'
       
-     if mytext == 'hello'
+     if mytext == 'hello':
         sendtext = 'Hi!..'
       
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
