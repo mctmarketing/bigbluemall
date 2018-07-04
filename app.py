@@ -26,7 +26,7 @@ def bot():
     mytext = msg_in_json["events"][0]['message']['text']
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
-    sendtext = ''
+    sendtext = 'งง'
     #Trainning Bot
     if mytext == 'ดี':
        sendtext = 'ดีจ้า'
