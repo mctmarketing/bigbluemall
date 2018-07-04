@@ -23,7 +23,7 @@ def bot():
     
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
     replyToken = msg_in_json["events"][0]['replyToken']
-    mytext = 'สวัสดี' #msg_in_json["events"][0]['messages']['text']
+    mytext = msg_in_string["events"][0]['messages']['text']
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     
