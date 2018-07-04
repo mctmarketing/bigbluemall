@@ -20,7 +20,7 @@ def bot():
     # ข้อความที่ได้รับมา
     msg_in_json = request.get_json()
     msg_in_string = json.dumps(msg_in_json)
-    msg_in_json = json.dumps(msg_in_json)
+
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
