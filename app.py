@@ -53,13 +53,9 @@ def reply(replyToken, textList):
         'Authorization': LINE_API_KEY
     }
     
-    '''data = json.dumps({
-        "replyToken":replyToken,
-        "messages":[{"type":"text","text":textList}]
-    })'''
     data = json.dumps({
         "replyToken":replyToken,
-        "messages":{"type": "sticker","packageId": "1","stickerId": "1"}
+        "messages":[{"type":"text","text":textList}]
     })
 
     requests.post(LINE_API, headers=headers, data=data)
