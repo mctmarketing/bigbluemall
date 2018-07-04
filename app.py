@@ -20,8 +20,9 @@ def bot():
     # ข้อความที่ได้รับมา
     msg_in_json = request.get_json()
     msg_in_string = json.dumps(msg_in_json)
-
+    
     # Token สำหรับตอบกลับ (จำเป็นต้องใช้ในการตอบกลับ)
+    replyToken = msg_in_json["events"][0]['replyToken']
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
@@ -29,6 +30,7 @@ def bot():
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     replyStack.append(msg_in_string)
     reply(replyToken, replyStack[:5])
+    
     return 'OK',200
  
 def reply(replyToken, textList):
@@ -39,12 +41,11 @@ def reply(replyToken, textList):
         'Authorization': LINE_API_KEY
     }
     msgs = []
-    #msgs.append('สวัสดีจ้า')
     for text in textList:
         msgs.append({
             "type":"text",
             "text":text
-            })
+        })
     data = json.dumps({
         "replyToken":replyToken,
         "messages":msgs
@@ -52,6 +53,5 @@ def reply(replyToken, textList):
     requests.post(LINE_API, headers=headers, data=data)
     return
 
-  
 if __name__ == '__main__':
     app.run()
