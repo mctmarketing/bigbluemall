@@ -59,14 +59,17 @@ def sendlocation(user):
   data = json.dumps({
   "replyToken":user,
   "messages":[
-  {
-    #"id": "325708",
-    "type": "location",
-    "title": "บ.มหาโชคมหาชัย เทรดดิ้ง",
-    "address": "หมู่ 6 5/9 ซอยวัดคลองมะเดื่อ 17 เศรษฐกิจ 1 ตำบล คลองมะเดื่อ อำเภอ กระทุ่มแบน สมุทรสาคร 74110",
-    "latitude": 35.65910807942215,
-    "longitude": 13.6271373
-  }]
-
+    {
+      #"id": "325708",
+      "type": "location",
+      "title": "บ.มหาโชคมหาชัย เทรดดิ้ง",
+      "address": "หมู่ 6 5/9 ซอยวัดคลองมะเดื่อ 17 เศรษฐกิจ 1 ตำบล คลองมะเดื่อ อำเภอ กระทุ่มแบน สมุทรสาคร 74110",
+      "latitude": 35.65910807942215,
+      "longitude": 13.6271373
+    }]
+  })
+  r = requests.post(LINE_API, headers=headers, data=data)
+  
+  
 if __name__ == '__main__':
   app.run(debug=True)
