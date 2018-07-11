@@ -23,7 +23,8 @@ def callback():
     sendSticker(user,'1','408')
   elif mytext = 'ดี':
     sendText(user,'ดีจ้าาาาา') # ส่งข้อความ งง
-    
+  else :
+    sendText(user,'ผมไม่เข้าใจ')
  
   return '',200
 
