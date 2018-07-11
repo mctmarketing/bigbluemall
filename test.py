@@ -30,7 +30,9 @@ def sendText(user, text):
   }
   data = json.dumps({
   "replyToken":user,
-  "messages":[{"type":"text","text":text}]})
+  #"messages":[{"type":"text","text":text}]
+    "messages":[{"type":"sticker","packageId": "1","stickerId": "1"}]
+  })
   #print("ข้อมูล：",data)
   r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
   #print(r.text)
