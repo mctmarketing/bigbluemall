@@ -74,22 +74,21 @@ def sendlocation(user):
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
-'''def sendCarousel(user):
+def sendCarousel(user):
   data = json.dumps({
   "replyToken":user,
   "messages":[{
       "type": "imagemap",
-      "baseUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic1.jpg",
+      "baseUrl": "https://github.com/mctmarketing/bigbluemall/blob/master/2.jpg",
       "altText": "This is an imagemap",
       "baseSize": {
         "width": 1040,
         "height": 1040
-      },
-      "actions": []
+      }
     
     }]
   })
-  r = requests.post(LINE_API, headers=headers, data=data)'''
+  r = requests.post(LINE_API, headers=headers, data=data)
   
   
 if __name__ == '__main__':
