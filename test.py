@@ -96,16 +96,6 @@ def sendCarousel(user):
                     "width": 500,
                     "height": 980
                 }
-            },
-            {
-                "type": "message",
-                "text": "Hello",
-                "area": {
-                    "x": 0,
-                    "y": 0,
-                    "width": 520,
-                    "height": 1040
-                }
             }
         ]
       }
