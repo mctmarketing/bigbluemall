@@ -19,14 +19,14 @@ def callback():
   #print("ผู้ใช้：",user)
   mytext = decoded["events"][0]['message']['text']
   
-  '''if mytext = 'บาย':
+  if mytext == 'บาย':
     sendSticker(user,'1','408')
-  elif mytext = 'ดี':
+  elif mytext == 'ดี':
     sendText(user,'ดีจ้าาาาา') # ส่งข้อความ งง
   else :
-    sendText(user,'ผมไม่เข้าใจ')'''
+    sendText(user,'ผมไม่เข้าใจ')
  
-  sendText(user,mytext)
+  #sendText(user,mytext)
   return '',200
 
 
