@@ -3,8 +3,10 @@ from flask import Flask, request
 import json
 import requests
 
-global LINE_API = 'https://api.line.me/v2/bot/message/reply'
-global headers = {
+global LINE_API
+LINE_API = 'https://api.line.me/v2/bot/message/reply'
+global headers
+headers = {
   'Content-Type': 'application/json; charset=UTF-8',
   'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
   }
