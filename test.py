@@ -79,7 +79,7 @@ def sendCarousel(user):
   "replyToken":user,
   "messages":[{
       "type": "imagemap",
-      "baseUrl": "https://github.com/mctmarketing/bigbluemall/blob/master/2.jpg",
+      "baseUrl": "https://www.picz.in.th/images/2018/07/11/NEd20v.jpg",
       "altText": "This is an imagemap",
       "baseSize": {
         "width": 1040,
