@@ -74,7 +74,7 @@ def sendlocation(user):
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
-def sendCarousel(user):
+'''def sendCarousel(user):
   data = json.dumps({
   "replyToken":user,
   "messages":[{
@@ -87,44 +87,9 @@ def sendCarousel(user):
       },
       "actions": []
     
-  }]
-  '''"messages":[
-    {
-      "type": "template",
-      "altText": "MCT template",
-      "template": {
-        "type": "carousel",
-        "actions": [],
-        "columns": [
-          {
-            "thumbnailImageUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic1.jpg",
-            "title": "เว็บสินค้า",
-            "text": "มีสินค้ามากมาย",
-            "actions": [
-              {
-                "type": "message",
-                "label": "กดเพื่อดูวิธีการ",
-                "text": "Action 1"
-              }
-            ]
-          },
-          {
-            "thumbnailImageUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic2.jpg",
-            "title": "CRM MCT",
-            "text": "CRM ",
-            "actions": [
-              {
-                "type": "message",
-                "label": "กดเพื่อดูเกร็ดน่ารู้",
-                "text": "Action 1"
-              }
-            ]
-          }
-        ]
-      }
-    }]'''
+    }]
   })
-  r = requests.post(LINE_API, headers=headers, data=data)
+  r = requests.post(LINE_API, headers=headers, data=data)'''
   
   
 if __name__ == '__main__':
