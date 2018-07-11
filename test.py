@@ -19,13 +19,14 @@ def callback():
   #print("ผู้ใช้：",user)
   mytext = decoded["events"][0]['message']['text']
   
-  if mytext = 'บาย':
+  '''if mytext = 'บาย':
     sendSticker(user,'1','408')
   elif mytext = 'ดี':
     sendText(user,'ดีจ้าาาาา') # ส่งข้อความ งง
   else :
-    sendText(user,'ผมไม่เข้าใจ')
+    sendText(user,'ผมไม่เข้าใจ')'''
  
+  sendText(user,mytext)
   return '',200
 
 
@@ -38,8 +39,7 @@ def sendText(user, text):
   }
   data = json.dumps({
   "replyToken":user,
-  #"messages":[{"type":"text","text":text}]
-    "messages":[{"type":"text","text": text}]
+  "messages":[{"type":"text","text":text}]
   })
   #print("ข้อมูล：",data)
   r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
@@ -55,7 +55,6 @@ def sendSticker(user, pkid,sid):
   }
   data = json.dumps({
   "replyToken":user,
-  #"messages":[{"type":"text","text":text}]
     "messages":[{"type":"sticker","packageId": pkid,"stickerId": sid}]
   })
   #print("ข้อมูล：",data)
