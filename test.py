@@ -91,17 +91,17 @@ def sendCarousel(user):
                 "type": "uri",
                 "linkUri": "https://www.picz.in.th/images/2018/07/11/NEd20v.jpg",
                 "area": {
-                    "x": 0,
-                    "y": 0,
-                    "width": 520,
-                    "height": 1040
+                    "x": 240,
+                    "y": 240,
+                    "width": 500,
+                    "height": 980
                 }
             },
             {
                 "type": "message",
                 "text": "Hello",
                 "area": {
-                    "x": 520,
+                    "x": 0,
                     "y": 0,
                     "width": 520,
                     "height": 1040
