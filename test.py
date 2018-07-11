@@ -77,7 +77,18 @@ def sendlocation(user):
 def sendCarousel(user):
   data = json.dumps({
   "replyToken":user,
-  "messages":[
+  "messages":[{
+      "type": "imagemap",
+      "baseUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic1.jpg",
+      "altText": "This is an imagemap",
+      "baseSize": {
+        "width": 1040,
+        "height": 1040
+      },
+      "actions": []
+    
+  }]
+  '''"messages":[
     {
       "type": "template",
       "altText": "MCT template",
@@ -111,7 +122,7 @@ def sendCarousel(user):
           }
         ]
       }
-    }]
+    }]'''
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
