@@ -77,16 +77,39 @@ def sendlocation(user):
 def sendCarousel(user):
   data = json.dumps({
   "replyToken":user,
-  "messages":[{
-      "type": "imagemap",
-      "baseUrl": "https://www.picz.in.th/images/2018/07/11/NEd20v.jpg",
-      "altText": "This is an imagemap",
-      "baseSize": {
-        "width": 1040,
-        "height": 1040
+  "messages":[
+      {
+        "type": "imagemap",
+        "baseUrl": "https://www.picz.in.th/images/2018/07/11/NEd20v.jpg",
+        "altText": "This is an imagemap",
+        "baseSize": {
+            "height": 1040,
+            "width": 1040
+        },
+        "actions": [
+            {
+                "type": "uri",
+                "linkUri": "https://www.picz.in.th/images/2018/07/11/NEd20v.jpg",
+                "area": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 520,
+                    "height": 1040
+                }
+            },
+            {
+                "type": "message",
+                "text": "Hello",
+                "area": {
+                    "x": 520,
+                    "y": 0,
+                    "width": 520,
+                    "height": 1040
+                }
+            }
+        ]
       }
-    
-    }]
+  ]
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
