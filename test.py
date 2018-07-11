@@ -36,6 +36,8 @@ def callback():
     sendText(user,'ดีจ้าาาาา') # ส่งข้อความ งง
   elif mytext == 'พิกัด':
     sendlocation(user)
+  elif mytext == 'ดู':
+    sendCarousel(user)
   else :
     sendText(user,'ผมไม่เข้าใจ')
  
@@ -68,6 +70,47 @@ def sendlocation(user):
       "address": "หมู่ 6 5/9 ซอยวัดคลองมะเดื่อ 17 เศรษฐกิจ 1 ตำบล คลองมะเดื่อ อำเภอ กระทุ่มแบน สมุทรสาคร 74110",
       "latitude": 13.6271373,
       "longitude": 100.2878033
+    }]
+  })
+  r = requests.post(LINE_API, headers=headers, data=data)
+  
+def sendCarousel(user):
+  data = json.dumps({
+  "replyToken":user,
+  "messages":[
+    {
+      "type": "template",
+      "altText": "MCT template",
+      "template": {
+        "type": "carousel",
+        "actions": [],
+        "columns": [
+          {
+            "thumbnailImageUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic1.jpg",
+            "title": "เว็บสินค้า",
+            "text": "มีสินค้ามากมาย",
+            "actions": [
+              {
+                "type": "message",
+                "label": "กดเพื่อดูวิธีการ",
+                "text": "Action 1"
+              }
+            ]
+          },
+          {
+            "thumbnailImageUrl": "http://mgroup.dyndns.org/crm/mystorage/Pic2.jpg",
+            "title": "CRM MCT",
+            "text": "CRM ",
+            "actions": [
+              {
+                "type": "message",
+                "label": "กดเพื่อดูเกร็ดน่ารู้",
+                "text": "Action 1"
+              }
+            ]
+          }
+        ]
+      }
     }]
   })
   r = requests.post(LINE_API, headers=headers, data=data)
