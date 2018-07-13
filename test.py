@@ -85,58 +85,48 @@ def sendCarousel(user):
           "type": "carousel",
           "columns": [
               {
-                "thumbnailImageUrl": "https://example.com/bot/images/item1.jpg",
+                "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlREUJ.png",
                 "imageBackgroundColor": "#FFFFFF",
-                "title": "this is menu",
-                "text": "description",
+                "title": "เว็บ m-group",
+                "text": "เว็บ m-group description",
                 "defaultAction": {
                     "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/123"
+                    "label": "Home Page",
+                    "uri": "http://www.m-group.in.th"
                 },
                 "actions": [
                     {
                         "type": "postback",
-                        "label": "Buy",
-                        "data": "action=buy&itemid=111"
+                        "label": "กาว PU-019 ตราแปดเซียน",
+                        "data": "/products/กาว-PU%252d019-ตราแปดเซียน-.html"
                     },
                     {
                         "type": "postback",
-                        "label": "Add to cart",
-                        "data": "action=add&itemid=111"
-                    },
-                    {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/111"
+                        "label": "ตาข่ายกันกระแทก",
+                        "data": "/products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
                     }
                 ]
               },
               {
-                "thumbnailImageUrl": "https://example.com/bot/images/item2.jpg",
+                "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlRn8I.png",
                 "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
+                "title": "เว็บ CRM",
+                "text": "เว็บ CRM description",
                 "defaultAction": {
                     "type": "uri",
-                    "label": "View detail",
-                    "uri": "http://example.com/page/222"
+                    "label": "หน้าแรก",
+                    "uri": "http://mgroup.dyndns.org/crm"
                 },
                 "actions": [
                     {
                         "type": "postback",
-                        "label": "Buy",
-                        "data": "action=buy&itemid=222"
+                        "label": "Page Login",
+                        "data": ""
                     },
                     {
                         "type": "postback",
-                        "label": "Add to cart",
-                        "data": "action=add&itemid=222"
-                    },
-                    {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/222"
+                        "label": "login",
+                        "data": ""
                     }
                 ]
               }
