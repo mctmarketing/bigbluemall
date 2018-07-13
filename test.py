@@ -77,64 +77,64 @@ def sendlocation(user):
 def sendCarousel(user):
   data = json.dumps({
   "replyToken":user,
-  "messages":
-    [{
-      "type": "template",
-      "altText": "this is a carousel template",
-      "template": {
-          "type": "carousel",
-          "columns": [
-              {
-                "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlREUJ.png",
-                "imageBackgroundColor": "#FFFFFF",
-                "title": "เว็บ m-group",
-                "text": "เว็บ m-group description",
-                "defaultAction": {
-                    "type": "uri",
-                    "label": "Home Page",
-                    "uri": "http://www.m-group.in.th"
+  "messages":[{
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+                {
+                  "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlREUJ.png",
+                  "imageBackgroundColor": "#FFFFFF",
+                  "title": "เว็บ m-group",
+                  "text": "เว็บ m-group description",
+                  "defaultAction": {
+                      "type": "uri",
+                      "label": "Home Page",
+                      "uri": "http://www.m-group.in.th"
+                  },
+                  "actions": [
+                      {
+                          "type": "postback",
+                          "label": "กาว PU-019 ตราแปดเซียน",
+                          "data": "products/กาว-PU%252d019-ตราแปดเซียน-.html"
+                      },
+                      {
+                          "type": "postback",
+                          "label": "ตาข่ายกันกระแทก",
+                          "data": "products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
+                      }
+                  ]
                 },
-                "actions": [
-                    {
-                        "type": "postback",
-                        "label": "กาว PU-019 ตราแปดเซียน",
-                        "data": "/products/กาว-PU%252d019-ตราแปดเซียน-.html"
-                    },
-                    {
-                        "type": "postback",
-                        "label": "ตาข่ายกันกระแทก",
-                        "data": "/products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
-                    }
-                ]
-              },
-              {
-                "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlRn8I.png",
-                "imageBackgroundColor": "#000000",
-                "title": "เว็บ CRM",
-                "text": "เว็บ CRM description",
-                "defaultAction": {
-                    "type": "uri",
-                    "label": "หน้าแรก",
-                    "uri": "http://mgroup.dyndns.org/crm"
-                },
-                "actions": [
-                    {
-                        "type": "postback",
-                        "label": "Page Login",
-                        "data": ""
-                    },
-                    {
-                        "type": "postback",
-                        "label": "login",
-                        "data": ""
-                    }
-                ]
-              }
-          ],
-          "imageAspectRatio": "rectangle",
-          "imageSize": "cover"
-      }
-    }]
+                {
+                  "thumbnailImageUrl": "https://www.picz.in.th/images/2018/07/13/NlRn8I.png",
+                  "imageBackgroundColor": "#000000",
+                  "title": "เว็บ CRM",
+                  "text": "เว็บ CRM description",
+                  "defaultAction": {
+                      "type": "uri",
+                      "label": "หน้าแรก",
+                      "uri": "http://mgroup.dyndns.org/crm"
+                  },
+                  "actions": [
+                      {
+                          "type": "postback",
+                          "label": "Page Login",
+                          "data": "action=add&itemid=222"
+                      },
+                      {
+                          "type": "postback",
+                          "label": "login",
+                          "data": "action=add&itemid=222"
+                      }
+                  ]
+                }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+      }]
+    
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
