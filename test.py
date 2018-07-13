@@ -96,14 +96,20 @@ def sendCarousel(user):
                   "actions": [
                       {
                           "type": "postback",
-                          "label": "กาว PU-019 ตราแปดเซียน",
-                          "data": "products/กาว-PU%252d019-ตราแปดเซียน-.html"
+                          "label": "Buy",
+                          "data": "action=buy&itemid=111"
+                      },
+                      {
+                          "type": "postback",
+                          "label": "Add to cart",
+                          "data": "action=add&itemid=111"
                       },
                       {
                           "type": "uri",
-                          "label": "ตาข่ายกันกระแทก",
-                          "uri": "http://www.m-group.in.th/MAIN/products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
+                          "label": "View detail",
+                          "uri": "http://www.m-group.in.th"
                       }
+                    
                   ]
                 },
                 {
@@ -123,8 +129,13 @@ def sendCarousel(user):
                           "data": "action=add&itemid=222"
                       },
                       {
+                          "type": "postback",
+                          "label": "Add to cart",
+                          "data": "action=add&itemid=222"
+                      },
+                      {
                           "type": "uri",
-                          "label": "login",
+                          "label": "View detail",
                           "uri": "http://mgroup.dyndns.org/crm"
                       }
                   ]
