@@ -88,11 +88,7 @@ def sendCarousel(user):
                   "imageBackgroundColor": "#FFFFFF",
                   "title": "เว็บ m-group",
                   "text": "เว็บ m-group description",
-                  "defaultAction": {
-                      "type": "uri",
-                      "label": "Home Page",
-                      "uri": "http://www.m-group.in.th"
-                  },
+                  
                   "actions": [
                       {
                           "type": "postback",
@@ -117,11 +113,7 @@ def sendCarousel(user):
                   "imageBackgroundColor": "#000000",
                   "title": "เว็บ CRM",
                   "text": "เว็บ CRM description",
-                  "defaultAction": {
-                      "type": "uri",
-                      "label": "หน้าแรก",
-                      "uri": "http://mgroup.dyndns.org/crm"
-                  },
+                  
                   "actions": [
                       {
                           "type": "postback",
