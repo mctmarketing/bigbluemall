@@ -100,9 +100,9 @@ def sendCarousel(user):
                           "data": "products/กาว-PU%252d019-ตราแปดเซียน-.html"
                       },
                       {
-                          "type": "postback",
+                          "type": "uri",
                           "label": "ตาข่ายกันกระแทก",
-                          "data": "products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
+                          "uri": "http://www.m-group.in.th/MAIN/products/ตาข่ายกันกระแทก-%28ตาข่ายถักแก๊ส%29.html"
                       }
                   ]
                 },
@@ -123,9 +123,9 @@ def sendCarousel(user):
                           "data": "action=add&itemid=222"
                       },
                       {
-                          "type": "postback",
+                          "type": "uri",
                           "label": "login",
-                          "data": "action=add&itemid=222"
+                          "uri": "http://mgroup.dyndns.org/crm"
                       }
                   ]
                 }
