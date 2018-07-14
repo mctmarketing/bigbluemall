@@ -40,6 +40,8 @@ def callback():
     sendCarousel(user)
   elif mytext == 'รูป':
     sendimgMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
+  elif mytext in "ติดต่อ":
+    sendConfirm(user)
   else :
     sendText(user,'ผมไม่เข้าใจ')
  
@@ -90,7 +92,7 @@ def sendimgMap(user,pic):
             "actions": [
             {
                   "type": "uri",
-                  "linkUri": "https://www.m-group.in.th",
+                  "linkUri": "http://www.m-group.in.th",
                   "area":{  
                       "x":0,
                       "y":0,
@@ -104,6 +106,32 @@ def sendimgMap(user,pic):
 
     })
     r = requests.post(LINE_API, headers=headers, data=data)
+  
+def sendConfirm (user):
+  data = json.dumps({
+  "replyToken":user,
+  "messages":[{
+        "type": "template",
+        "altText": "MCT Confirm",
+        "template": {
+          "type": "confirm",
+          "actions": [
+            {
+              "type": "message",
+              "label": "No",
+              "text": "No"
+            },
+            {
+              "type": "message",
+              "label": "Call",
+              "text": "Yes"
+            }
+          ],
+          "text": "Are you sure?"
+        }
+      }]
+  })
+  r = requests.post(LINE_API, headers=headers, data=data)
   
 def sendCarousel(user):
   data = json.dumps({
