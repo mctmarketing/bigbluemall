@@ -94,7 +94,7 @@ def sendimgMap(user,pic):
             "actions": [
             {
                   "type": "uri",
-                  "linkUri": "http://www.m-group.in.th",
+                  "linkUri": "http://www.m-group.in.th/main/",
                   "area":{  
                       "x":0,
                       "y":0,
