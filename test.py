@@ -99,7 +99,7 @@ def sendimgMap(user,pic):
                                 "height":1040
                             }
 
-        }],
+        },
         {
             "type": "message",
             "text": "Hello",
@@ -109,7 +109,7 @@ def sendimgMap(user,pic):
                 "width": 1040,
                 "height": 1040
             }
-        }
+        }]
     }
   ]
   })
