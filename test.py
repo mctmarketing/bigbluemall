@@ -38,6 +38,8 @@ def callback():
     sendlocation(user)
   elif mytext == 'ดู':
     sendCarousel(user)
+  elif mytext == 'รูป':
+    sendimgMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
   else :
     sendText(user,'ผมไม่เข้าใจ')
  
@@ -71,6 +73,24 @@ def sendlocation(user):
       "latitude": 13.6271373,
       "longitude": 100.2878033
     }]
+  })
+  r = requests.post(LINE_API, headers=headers, data=data)
+    
+def sendimgMap(user,pic):
+  data = json.dumps({
+  "replyToken":user,
+  "messages": [
+    {
+      "type": "imagemap",
+      "baseUrl": pic,
+      "altText": "This is an imagemap",
+      "baseSize": {
+        "width": 1040,
+        "height": 1040
+      },
+      "actions": []
+    }
+  ]
   })
   r = requests.post(LINE_API, headers=headers, data=data)
   
