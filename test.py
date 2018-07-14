@@ -129,6 +129,11 @@ def sendCarousel(user):
                           "type": "uri",
                           "label": "View detail",
                           "uri": "http://mgroup.dyndns.org/crm"
+                      },
+                      {
+                          "type": "uri",
+                          "label": "Call",
+                          "uri": "tel:0944191941"
                       }
                   ]
                 }
