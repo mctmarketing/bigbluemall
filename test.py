@@ -77,43 +77,43 @@ def sendlocation(user):
   r = requests.post(LINE_API, headers=headers, data=data)
     
 def sendimgMap(user,pic):
-  data = json.dumps({
-  "replyToken":user,
-  "messages": [
-    {
-      "type": "imagemap",
-      "baseUrl": pic,
-      "altText": "This is an imagemap",
-      "baseSize": {
-        "width": 1040,
-        "height": 1040
-      },
-      "actions": [{
-                          "type": "uri",
-                          #"label": "View detail",
-                          "linkUri": "http://www.m-group.in.th"
-                          "area":{  
-                                "x":0,
-                                "y":0,
-                                "width":1040,
-                                "height":1040
-                            }
+    data = json.dumps({
+    "replyToken":user,
+    "messages": [{
+            "type": "imagemap",
+            "baseUrl": pic,
+            "altText": "This is an imagemap",
+            "baseSize": {
+              "width": 1040,
+              "height": 1040
+            },
+            "actions": [
+            {
+                  "type": "uri",
+                  "linkUri": "https://www.m-group.in.th"
+                  "area":{  
+                      "x":0,
+                      "y":0,
+                      "width":1040,
+                      "height":1040
+                      }
 
-        },
-        {
-            "type": "message",
-            "text": "Hello",
-            "area": {
+            },
+            {
+              "type": "message",
+              "text": "Hello",
+              "area": {
                 "x": 0,
                 "y": 0,
                 "width": 1040,
                 "height": 1040
+              }
             }
-        }]
-    }
-  ]
-  })
-  r = requests.post(LINE_API, headers=headers, data=data)
+          ]
+      }]
+
+    })
+    r = requests.post(LINE_API, headers=headers, data=data)
   
 def sendCarousel(user):
   data = json.dumps({
