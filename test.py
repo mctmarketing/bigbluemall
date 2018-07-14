@@ -33,7 +33,9 @@ def callback():
   if mytext == 'บาย':
     sendSticker(user,'1','408')
   elif mytext == 'ดี':
-    sendText(user,'ดีจ้าาาาา') # ส่งข้อความ งง
+    sendText(user,'ดีจ้าาาาา')
+  elif mytext == 'No':
+    sendText(user,'ขอบคุณค่ะ')
   elif mytext == 'พิกัด':
     sendlocation(user)
   elif mytext == 'ดู':
@@ -122,9 +124,9 @@ def sendConfirm (user):
               "text": "No"
             },
             {
-              "type": "message",
+              "type": "uri",
               "label": "Call",
-              "text": "Yes"
+              "uri": "tel:034878366"
             }
           ],
           "text": "Are you sure?"
