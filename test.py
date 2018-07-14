@@ -128,7 +128,7 @@ def sendCarousel(user):
                       {
                           "type": "uri",
                           "label": "Call Now",
-                          "uri": "tel:0944191941"
+                          "uri": "tel:0841488426"
                       }
                   ]
                 }
