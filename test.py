@@ -7,18 +7,18 @@ global LINE_API
 LINE_API = 'https://api.line.me/v2/bot/message/reply'
 global headers
 headers = {
-  'Content-Type': 'application/json; charset=UTF-8',
-  'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
-  }
-
-
+    'Content-Type': 'application/json; charset=UTF-8',
+    'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
+     #input your Channel access token (long-lived) 
+          }
 
 app = Flask(__name__)
 @app.route('/')
 def index():
   return "WELCOME TO MCT!"
-
-# ส่วน callback สำหรับ Webhook
+  #Display to Server
+  
+#Callback สำหรับ Webhook
 @app.route('/callback', methods=['POST'])
 def callback():
   json_line = request.get_json()
@@ -28,6 +28,7 @@ def callback():
   #id=[d['replyToken'] for d in user][0]
   #print(json_line)
   #print("ผู้ใช้：",user)
+  
   mytext = decoded["events"][0]['message']['text']
   
   if mytext == 'บาย':
@@ -45,7 +46,7 @@ def callback():
   elif mytext in "ติดต่อ":
     sendConfirm(user)
   else :
-    sendText(user,'ผมไม่เข้าใจ')
+    sendText(user)
  
   #sendText(user,mytext)
   return '',200
