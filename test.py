@@ -1,4 +1,3 @@
-
 from flask import Flask, request
 import json
 import requests
@@ -18,7 +17,7 @@ def index():
   return "WELCOME TO MCT!"
   #Display to Server
   
-#Callback สำหรับ Webhook
+#Callback For Webhook
 @app.route('/callback', methods=['POST'])
 def callback():
   json_line = request.get_json()
@@ -29,25 +28,24 @@ def callback():
   #print(json_line)
   #print("ผู้ใช้：",user)
   
-  mytext = decoded["events"][0]['message']['text']
+  Condition = decoded["events"][0]['message']['text']
   
-  if mytext == 'บาย':
+  if Condition == 'บาย':
     sendSticker(user,'1','408')
-  elif mytext == 'ดี':
+  elif Condition == 'ดี':
     sendText(user,'ดีจ้าาาาา')
-  elif mytext == 'No':
+  elif Condition == 'No':
     sendText(user,'ขอบคุณค่ะ')
-  elif mytext == 'พิกัด':
+  elif Condition == 'พิกัด':
     sendlocation(user)
-  elif mytext == 'ดู':
+  elif Condition == 'ดู':
     sendCarousel(user)
-  elif mytext == 'รูป':
-    sendimgMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
+  elif Condition == 'รูป':
+    sendimageMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
   elif mytext in "ติดต่อ":
     sendConfirm(user)
   else :
-    sendText(user)
- 
+    Condition(user)
   #sendText(user,mytext)
   return '',200
 
@@ -57,15 +55,17 @@ def sendText(user, text):
   "replyToken":user,
   "messages":[{"type":"text","text":text}]
   })
-  r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
+    #sent data
+    r = requests.post(LINE_API, headers=headers, data=data)
   
 def sendSticker(user, pkid,sid):
   data = json.dumps({
   "replyToken":user,
   "messages":[{"type":"sticker","packageId": pkid,"stickerId": sid}]
   })
-  r = requests.post(LINE_API, headers=headers, data=data)
-  
+    #sent data
+    r = requests.post(LINE_API, headers=headers, data=data)
+
 def sendlocation(user):
   data = json.dumps({
   "replyToken":user,
@@ -79,9 +79,10 @@ def sendlocation(user):
       "longitude": 100.2878033
     }]
   })
-  r = requests.post(LINE_API, headers=headers, data=data)
+      #sent data
+      r = requests.post(LINE_API, headers=headers, data=data)
     
-def sendimgMap(user,pic):
+def sendimageMap(user,pic):
     data = json.dumps({
     "replyToken":user,
     "messages": [{
@@ -91,23 +92,22 @@ def sendimgMap(user,pic):
             "baseSize": {
               "width": 1040,
               "height": 1040
-            },
+                        },
             "actions": [
             {
                   "type": "uri",
                   "linkUri": "http://www.m-group.in.th/main/",
-                  "area":{  
+                  "area":   {  
                       "x":0,
                       "y":0,
                       "width":1040,
                       "height":1040
-                      }
-
+                            }
             }
-          ]
-      }]
-
-    })
+                        ]
+                }]
+                    })
+    
     r = requests.post(LINE_API, headers=headers, data=data)
   
 def sendConfirm (user):
