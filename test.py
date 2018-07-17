@@ -16,7 +16,7 @@ headers = {
 app = Flask(__name__)
 @app.route('/')
 def index():
-  return "Hello World!"
+  return "WELCOME TO MCT!"
 
 # ส่วน callback สำหรับ Webhook
 @app.route('/callback', methods=['POST'])
