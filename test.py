@@ -6,18 +6,18 @@ global LINE_API
 LINE_API = 'https://api.line.me/v2/bot/message/reply'
 global headers
 headers = {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
-     #input your Channel access token (long-lived) 
-          }
+  'Content-Type': 'application/json; charset=UTF-8',
+  'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
+  }
+
+
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-  return "Welcome to MCT!"
-  #Display to Server
-  
-#Callback For Webhook
+  return "Hello World!"
+
+# ส่วน callback สำหรับ Webhook
 @app.route('/callback', methods=['POST'])
 def callback():
   json_line = request.get_json()
@@ -27,7 +27,6 @@ def callback():
   #id=[d['replyToken'] for d in user][0]
   #print(json_line)
   #print("ผู้ใช้：",user)
-  
   mytext = decoded["events"][0]['message']['text']
   
   if mytext == 'บาย':
@@ -41,11 +40,12 @@ def callback():
   elif mytext == 'ดู':
     sendCarousel(user)
   elif mytext == 'รูป':
-    sendimageMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
+    sendimgMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
   elif mytext in "ติดต่อ":
     sendConfirm(user)
   else :
-    mytext(user)
+    sendText(user,'ผมไม่เข้าใจ')
+ 
   #sendText(user,mytext)
   return '',200
 
@@ -55,17 +55,15 @@ def sendText(user, text):
   "replyToken":user,
   "messages":[{"type":"text","text":text}]
   })
-    #sent data
-    r = requests.post(LINE_API, headers=headers, data=data)
+  r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
   
 def sendSticker(user, pkid,sid):
   data = json.dumps({
   "replyToken":user,
   "messages":[{"type":"sticker","packageId": pkid,"stickerId": sid}]
   })
-    #sent data
-    r = requests.post(LINE_API, headers=headers, data=data)
-
+  r = requests.post(LINE_API, headers=headers, data=data)
+  
 def sendlocation(user):
   data = json.dumps({
   "replyToken":user,
@@ -73,16 +71,15 @@ def sendlocation(user):
     {
       #"id": "325708",
       "type": "location",
-      "title": "บริษัท มหาโชค มหาชัย เทรดดิ้ง",
-      "address": "5/9 หมู่ 6 ซอยวัดคลองมะเดื่อ 17/6 ถนน เศรษฐกิจ 1 ตำบล คลองมะเดื่อ อำเภอ กระทุ่มแบน สมุทรสาคร 74110",
+      "title": "บ.มหาโชคมหาชัย เทรดดิ้ง",
+      "address": "หมู่ 6 5/9 ซอยวัดคลองมะเดื่อ 17 เศรษฐกิจ 1 ตำบล คลองมะเดื่อ อำเภอ กระทุ่มแบน สมุทรสาคร 74110",
       "latitude": 13.6271373,
       "longitude": 100.2878033
     }]
   })
-      #sent data
-      r = requests.post(LINE_API, headers=headers, data=data)
+  r = requests.post(LINE_API, headers=headers, data=data)
     
-def sendimageMap(user,pic):
+def sendimgMap(user,pic):
     data = json.dumps({
     "replyToken":user,
     "messages": [{
@@ -92,22 +89,23 @@ def sendimageMap(user,pic):
             "baseSize": {
               "width": 1040,
               "height": 1040
-                        },
+            },
             "actions": [
             {
                   "type": "uri",
                   "linkUri": "http://www.m-group.in.th/main/",
-                  "area":   {  
+                  "area":{  
                       "x":0,
                       "y":0,
                       "width":1040,
                       "height":1040
-                            }
+                      }
+
             }
-                        ]
-                }]
-                    })
-    
+          ]
+      }]
+
+    })
     r = requests.post(LINE_API, headers=headers, data=data)
   
 def sendConfirm (user):
@@ -115,22 +113,22 @@ def sendConfirm (user):
   "replyToken":user,
   "messages":[{
         "type": "template",
-        "altText": "ติดต่อเรา",
+        "altText": "MCT Confirm",
         "template": {
           "type": "confirm",
           "actions": [
             {
               "type": "message",
-              "label": "ไม่ใช่",
+              "label": "No",
               "text": "No"
             },
             {
               "type": "uri",
-              "label": "โทร",
+              "label": "Call",
               "uri": "tel:034878366"
             }
           ],
-          "text": "ติดต่อเรา"
+          "text": "Are you sure?"
         }
       }]
   })
