@@ -114,22 +114,22 @@ def sendConfirm (user):
   "replyToken":user,
   "messages":[{
         "type": "template",
-        "altText": "MCT Confirm",
+        "altText": "ติดต่อเรา",
         "template": {
           "type": "confirm",
           "actions": [
             {
               "type": "message",
-              "label": "No",
+              "label": "ไม่ใช่",
               "text": "No"
             },
             {
               "type": "uri",
-              "label": "Call",
+              "label": "ใช่",
               "uri": "tel:034878366"
             }
           ],
-          "text": "Are you sure?"
+          "text": "ติดต่อเรา"
         }
       }]
   })
