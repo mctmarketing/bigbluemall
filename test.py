@@ -14,7 +14,7 @@ headers = {
 app = Flask(__name__)
 @app.route('/')
 def index():
-  return "WELCOME TO MCT!"
+  return "Welcome to MCT!"
   #Display to Server
   
 #Callback For Webhook
@@ -42,7 +42,7 @@ def callback():
     sendCarousel(user)
   elif Condition == 'รูป':
     sendimageMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
-  elif mytext in "ติดต่อ":
+  elif Condition in "ติดต่อ":
     sendConfirm(user)
   else :
     Condition(user)
