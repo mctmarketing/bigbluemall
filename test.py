@@ -125,7 +125,7 @@ def sendConfirm (user):
             },
             {
               "type": "uri",
-              "label": "ใช่",
+              "label": "โทร",
               "uri": "tel:034878366"
             }
           ],
