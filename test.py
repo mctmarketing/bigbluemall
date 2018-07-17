@@ -28,24 +28,24 @@ def callback():
   #print(json_line)
   #print("ผู้ใช้：",user)
   
-  Condition = decoded["events"][0]['message']['text']
+  mytext = decoded["events"][0]['message']['text']
   
-  if Condition == 'บาย':
+  if mytext == 'บาย':
     sendSticker(user,'1','408')
-  elif Condition == 'ดี':
+  elif mytext == 'ดี':
     sendText(user,'ดีจ้าาาาา')
-  elif Condition == 'No':
+  elif mytext == 'No':
     sendText(user,'ขอบคุณค่ะ')
-  elif Condition == 'พิกัด':
+  elif mytext == 'พิกัด':
     sendlocation(user)
-  elif Condition == 'ดู':
+  elif mytext == 'ดู':
     sendCarousel(user)
-  elif Condition == 'รูป':
+  elif mytext == 'รูป':
     sendimageMap(user,'https://www.picz.in.th/images/2018/07/14/NDd6fN.jpg')
-  elif Condition in "ติดต่อ":
+  elif mytext in "ติดต่อ":
     sendConfirm(user)
   else :
-    Condition(user)
+    mytext(user)
   #sendText(user,mytext)
   return '',200
 
