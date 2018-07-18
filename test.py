@@ -15,7 +15,7 @@ headers = {
 app = Flask(__name__)
 @app.route('/')
 def index():
-  return "Hello World!"
+  return "Welcome to MCT"
 
 # ส่วน callback สำหรับ Webhook
 @app.route('/callback', methods=['POST'])
@@ -44,7 +44,7 @@ def callback():
   elif mytext in "ติดต่อ":
     sendConfirm(user)
   else :
-    sendText(user,'ผมไม่เข้าใจ')
+    sendText(user)
  
   #sendText(user,mytext)
   return '',200
