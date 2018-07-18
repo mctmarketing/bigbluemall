@@ -8,16 +8,16 @@ global headers
 headers = {
   'Content-Type': 'application/json; charset=UTF-8',
   'Authorization': 'Bearer UFeWGQdl10Yt2J4OeMgG2Hgejm+IPHzcvmX9ahwnFQ3q8B1Sg3YJE/BXh7GS8qrF2qOuMFs7A8Csig9QgITZQUVbewVPEjRcG2freADCDg8ZMAs6g46um2RTCK8PPDBto7hDdexbEKPVTKHxnSUTtwdB04t89/1O/w1cDnyilFU='
-  }
-
-
+  #inputChannel access token (long-lived)  
+          }
 
 app = Flask(__name__)
 @app.route('/')
 def index():
+  #showDisplay
   return "Welcome to MCT"
 
-# ส่วน callback สำหรับ Webhook
+#callbackWebhook
 @app.route('/callback', methods=['POST'])
 def callback():
   json_line = request.get_json()
@@ -27,9 +27,9 @@ def callback():
   #id=[d['replyToken'] for d in user][0]
   #print(json_line)
   #print("ผู้ใช้：",user)
-  mytext = decoded["events"][0]['message']['text']
+  condition = decoded["events"][0]['message']['text']
   
-  if mytext == 'บาย':
+  if condition == 'บาย':
     sendSticker(user,'1','408')
   elif mytext == 'ดี':
     sendText(user,'ดีจ้าาาาา')
