@@ -27,6 +27,7 @@ def callback():
   #id=[d['replyToken'] for d in user][0]
   #print(json_line)
   #print("ผู้ใช้：",user)
+  
   condition = decoded["events"][0]['message']['text']
   
   if condition == 'บาย':
