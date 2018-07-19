@@ -30,8 +30,8 @@ def callback():
   
   condition = decoded["events"][0]['message']['text']
   
-  if condition == 'บาย':
-    sendSticker(user,'1','408')
+  if condition == 'สวัสดี':
+    sendSticker(user,'3','242')
   elif mytext == 'ดี':
     sendText(user,'ดีจ้าาาาา')
   elif mytext == 'No':
